@@ -2,7 +2,7 @@
 Scrape data from neurips list of papers.
 
 
-To use make sure you are in the “mini” display on the website for any list of papers. Load the `scrapper.js` file then run `scrape_all_info("my-download.csv")`. And you will see numbers counting up. It is slow, but faster than I would be.
+To use make sure you are in the “mini” display on the website for any list of papers. Load the `scrapper.js` file then run `scrape_all_info("my-download.csv")` or `scrape_all_info("my-download.csv", 10)` to get the first 10 elements. And you will see numbers counting up. It is slow, but faster than I would be.
 
 This has only been lightly tested and works on safari (but likely all browsers). Pull requests welcome.
 

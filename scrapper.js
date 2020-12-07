@@ -73,7 +73,10 @@ async function scrape_all_info(file_name, num=-1) {
   if (num == -1){
     num = crds.length
   }
-  for (idx = 0, len = document.getElementsByClassName("myCard").length, text = ""; idx < len; idx++) {
+  if (num > crds.length) {
+    num = crds.length
+  }
+  for (idx = 0, len = num, text = ""; idx < len; idx++) {
     var info_prom = await scrape_info(crds[idx]);
     ret.push(info_prom)
     console.log(idx)
