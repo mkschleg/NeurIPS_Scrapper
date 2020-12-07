@@ -67,10 +67,14 @@ async function scrape_info(elem) {
   return [title, authors, poster_sess_date, poster_sess, link, paper_link]
 }
 
-async function scrape_all_info(file_name) {
+async function scrape_all_info(file_name, num=-1) {
   var ret = []
+  crds = document.getElementsByClassName("myCard")
+  if (num == -1){
+    num = crds.length
+  }
   for (idx = 0, len = document.getElementsByClassName("myCard").length, text = ""; idx < len; idx++) {
-    var info_prom = await scrape_info(document.getElementsByClassName("myCard")[idx]);
+    var info_prom = await scrape_info(crds[idx]);
     ret.push(info_prom)
     console.log(idx)
   }
